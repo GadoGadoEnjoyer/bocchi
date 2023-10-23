@@ -19,19 +19,19 @@ class Controller{
             header('Location: ' . BASEURL . '/login');
         }
     }
-    public function ratelimit($timelimit){
-        if(isset($_SESSION['action'])){
-            $timepass = time() - $_SESSION['action'];
+    public function ratelimit($timelimit,$type){
+        if(isset($_SESSION['action'][$type])){
+            $timepass = time() - $_SESSION['action'][$type];
             if($timepass < $timelimit){
                 return false;
             }
             else{
-                $_SESSION['action'] = time();
+                $_SESSION['action'][$type] = time();
                 return true;
             }
         }
         else{
-            $_SESSION['action'] = time();
+            $_SESSION['action'][$type] = time();
             return true;
         }
     }

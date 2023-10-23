@@ -17,5 +17,10 @@
 
         <input type="submit" value="Register">
     </form>
+    <?php 
+        if(isset($_GET['error'])){
+            echo("Username or email is already taken!");
+        }
+    ?>
 </body>
 </html>

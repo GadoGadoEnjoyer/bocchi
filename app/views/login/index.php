@@ -14,5 +14,11 @@
 
         <input type="submit" value="Login">
     </form>
+    <?php 
+        if(isset($_GET['error'])){
+            echo("Username or password is incorrect!");
+            echo("Or maybe you haven't verified your email yet!");
+        }
+    ?>
 </body>
 </html>

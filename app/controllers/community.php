@@ -8,7 +8,7 @@ class community extends Controller{
         //Btw these verification stuff is probably aint secure but eh
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $this->auth();
-            if($this->ratelimit(1) && $_FILES['image']['error'] == 0){
+            if($this->ratelimit(120,'communitypost') && $_FILES['image']['error'] == 0){
                 $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'];
                 $video = ['video/mp4', 'video/webm', 'video/ogg'];
 
@@ -19,8 +19,11 @@ class community extends Controller{
                         $filename = uniqid() . '_' . $_FILES['image']['name'];
                         $targetPath = $destinationDirectory . '/' . $filename;
                         if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
-                            if($this->model('PostModel')->create($filename, 'image'))
-                                echo 'File uploaded successfully!';
+                            if($this->model('PostModel')->create($filename, 'image')){
+                                echo 'Image uploaded successfully!';
+                                echo 'Wait until the Admin have verified your post!';
+                                echo '<a href="' . BASEURL . '/community">Back to Community</a>';
+                            }
                             else{
                                 echo 'Error uploading file to database.';
                             }
@@ -40,8 +43,11 @@ class community extends Controller{
                         $filename = uniqid() . '_' . $_FILES['image']['name'];
                         $targetPath = $destinationDirectory . '/' . $filename;
                         if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
-                            if($this->model('PostModel')->create($filename, 'video'))
-                                echo 'File uploaded successfully!';
+                            if($this->model('PostModel')->create($filename, 'video')){
+                            echo 'Video uploaded successfully!';
+                            echo 'Wait until the Admin have verified your post!';
+                            echo '<a href="' . BASEURL . '/community">Back to Community</a>';
+                            }
                             else{
                                 echo 'Error uploading file to database.';
                             }
@@ -59,8 +65,8 @@ class community extends Controller{
                 }
             }
             else{
-                echo 'ratelimit or no file';
-		var_dump($_FILES);
+                echo 'ratelimit! (You can only post every two minutes!) or no file';
+                echo('Which one? Idk. (idk I am to lazy to implement an error system)');
             }
         } 
         else if($_SERVER['REQUEST_METHOD'] == 'GET'){

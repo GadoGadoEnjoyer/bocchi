@@ -4,7 +4,9 @@ class admin extends Controller{
     public function index(){
         $this->auth();
         $this->admin();
-	var_dump($_SESSION['role']);
+        echo("Hello Admin!");
+        echo("Welcome back " . $_SESSION['username'] . " !");
+        echo("Here are the posts that need to be verified!");
         $data = $this->model('PostModel')->read();
         $this->view('admin/index',$data);
     }
