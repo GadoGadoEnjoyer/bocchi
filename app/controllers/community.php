@@ -8,7 +8,7 @@ class community extends Controller{
         //Btw these verification stuff is probably aint secure but eh
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $this->auth();
-            if($this->ratelimit(100) && $_FILES['image']['error'] == 0){
+            if($this->ratelimit(1) && $_FILES['image']['error'] == 0){
                 $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'];
                 $video = ['video/mp4', 'video/webm', 'video/ogg'];
 
@@ -60,6 +60,7 @@ class community extends Controller{
             }
             else{
                 echo 'ratelimit or no file';
+		var_dump($_FILES);
             }
         } 
         else if($_SERVER['REQUEST_METHOD'] == 'GET'){

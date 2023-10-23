@@ -4,6 +4,7 @@ class admin extends Controller{
     public function index(){
         $this->auth();
         $this->admin();
+	var_dump($_SESSION['role']);
         $data = $this->model('PostModel')->read();
         $this->view('admin/index',$data);
     }

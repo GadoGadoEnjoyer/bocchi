@@ -58,7 +58,7 @@ class UserModel{
         'from'    => 'LoafAnon@mail.sukaair.online',
         'to'      => $destination,
         'subject' => 'Email Verification!',
-        'text'    => 'localhost/bocchi/public/verifikasi/' . $token . '   Click this link to verify your email!'
+        'text'    => BASEURL . '/verifikasi/' . $token . '   Click this link to verify your email!'
         ]);
 
         return true;

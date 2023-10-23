@@ -4,7 +4,7 @@ class login extends Controller{
     public function index(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if($this->model('UserModel')->login()){
-                var_dump($_SESSION);
+                header('Location: ' . BASEURL . '/home');
             }
             else{
                 header('Location: ' . BASEURL . '/login');
