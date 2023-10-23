@@ -16,5 +16,9 @@
     <?php echo '<a href="' . BASEURL . '/community">Community</a>'; ?>
     <p>Upload your own pic or video! (Butuh akun tapi)</p>
     <?php echo '<a href="' . BASEURL . '/community/post">Upload</a>'; ?>
+    <p>Register Akun</p>
+    <?php echo '<a href="' . BASEURL . '/register">Register</a>'; ?>
+    <p>Login Akun</p>
+    <?php echo '<a href="' . BASEURL . '/login">Login</a>'; ?>
 </body>
 </html>
