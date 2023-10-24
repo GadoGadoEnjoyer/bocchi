@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community</title>
+    <title>Community</title>        
     <style>
-        .lol{
+        .post-container {
             display: flex;
-            margin-top:10%;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        img{
-            width: 25%;
-            border-radius: 30px;
-        }
-        h1{
-            text-align: center;
+        
+        .post-container img {
+            max-width: 100%;
+            margin-bottom: 10px;
         }
     </style>
-</head>
-<body>
-    <h1>Post</h1>
-    <div class="lol">
-    <?php 
-    foreach($data as $post){
-        echo '<img src="'. BASEURL.'/assets/' . $post['photo'] . '" alt="' . $post['title'] . '">';
-    } 
-    ?>
-    </div>
-</body>
-</html>
+    </head>
+    <body>
+        <?php 
+        foreach($data as $post){
+            echo('<div class="post-container">');
+            echo('<h1>' . $post['title'] . '</h1>');
+            echo '<img src="'. BASEURL.'/assets/' . $post['photo'] . '" alt="' . $post['title'] . '">';
+            echo('</div>');
+        } 
+        ?>
+    </body>    </html>
+
