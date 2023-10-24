@@ -7,9 +7,8 @@
     <style>
         body{
             display: flex;
-            flex-direction: column;
             margin-top:10%;
-            justify-items: flex-start;
+            align-items: center;
             background-color: black;
         }
         img{
