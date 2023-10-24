@@ -8,17 +8,21 @@
         body{
             display: flex;
             flex-direction: column;
-            align-items: center;
             margin-top:10%;
             background-color: black;
         }
         img{
-            width: 50%;
-            border-radius: 20px;
+            width: 25%;
+            border-radius: 30px;
+        }
+        h1{
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <h1>Post</h1>
     <?php 
     foreach($data as $post){
         echo('<h1>' . $post['title'] . '</h1>');
