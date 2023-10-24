@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top:10%;
+            background-color: black;
+        }
+        img{
+            width: 50%;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
     <?php 
