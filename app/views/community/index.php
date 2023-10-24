@@ -6,6 +6,9 @@
     <title>Community</title>
     <style>
         body{
+            background-color: #f5f5f5;
+        }
+        .lol{
             display: flex;
             margin-top:10%;
             align-items: center;
@@ -23,10 +26,12 @@
 </head>
 <body>
     <h1>Post</h1>
+    <div class="lol">
     <?php 
     foreach($data as $post){
         echo '<img src="'. BASEURL.'/assets/' . $post['photo'] . '" alt="' . $post['title'] . '">';
     } 
     ?>
+    </div>
 </body>
 </html>
