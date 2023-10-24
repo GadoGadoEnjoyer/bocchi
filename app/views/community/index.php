@@ -9,6 +9,7 @@
             display: flex;
             flex-direction: column;
             margin-top:10%;
+            justify-items: flex-start;
             background-color: black;
         }
         img{
@@ -25,7 +26,6 @@
     <h1>Post</h1>
     <?php 
     foreach($data as $post){
-        echo('<h1>' . $post['title'] . '</h1>');
         echo '<img src="'. BASEURL.'/assets/' . $post['photo'] . '" alt="' . $post['title'] . '">';
     } 
     ?>
