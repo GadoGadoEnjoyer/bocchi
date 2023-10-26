@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bocchi!</title>
     <link rel="stylesheet" href="<?php echo(BASEURL . "/css/index.css")?>">
 </head>
 <body>
@@ -11,8 +11,8 @@
         <nav class="navigation">
             <a href="#">About</a>
             <a href="#">Music</a>
-            <img src="../assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png" alt="" class="headerimg">
-            <a href="../html/character.html">Gallery</a>
+            <img src="<?php echo(BASEURL . "/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png")?>" alt="" class="headerimg">
+            <a href='#'>Gallery</a>
             <a href="#">Community</a>
         </nav>
         <div class="user-icon">
@@ -22,7 +22,7 @@
     <section class="home">  
         <div class="homecontent">
             <div class="image">
-                <img src="../assets/image/logo-image/logo.png" alt="">
+                <img src="<?php echo(BASEURL . "/assets/image/logo-image/logo.png")?>"" alt="">
             </div>
             
         
