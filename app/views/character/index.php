@@ -7,8 +7,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bocchi the Rock!</title>
-        <link rel="stylesheet" href="../../../public/css/character.css">
-        <script src="../../../public/js/character.js" defer></script>
+        <link rel="stylesheet" href="../../../bocchi/public/css/character.css">
+        <script src="../../../bocchi/public/js/character.js" defer></script>
     </head>
 
     <body>
@@ -16,8 +16,8 @@
             <nav class="main-navigation" id="mainNav">
                 <a href="#" class="nav-link">About</a>
                 <a href="#" class="nav-link">Music</a>
-                <a href="../../../public/html/index.html">
-                    <img src="../../../public/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png  " alt="Bocchi the Rock! Logo" class="header-logo">
+                <a href="../../../bocchi/public/html/index.html">
+                    <img src="../../../bocchi/public/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png  " alt="Bocchi the Rock! Logo" class="header-logo">
                 </a>
                 <a href="#" class="nav-link active">Gallery</a>
                 <a href="#" class="nav-link">Community</a>
@@ -60,10 +60,10 @@
                 </div>
 
                 <div class="character-thumbnails">
-                    <a href="#" onclick="changeCharacter('Gotoh Hitori')"><img src="../../../public/assets/image/character-image/gotoh.png" alt="Gotoh Hitori" class="thumbnail"></a>
-                    <a href="#" onclick="changeCharacter('Nijika')"><img src="../../../public/assets/image/character-image/nijika.png" alt="Nijika" class="thumbnail"></a>
-                    <a href="#" onclick="changeCharacter('Ryo')"><img src="../../../public/assets/image/character-image/ryo.png" alt="Ryo" class="thumbnail"></a>
-                    <a href="#" onclick="changeCharacter('Kita')"><img src="../../../public/assets/image/character-image/kita.png" alt="Kita" class="thumbnail"></a>
+                    <a href="#" onclick="changeCharacter('Gotoh Hitori')"><img src="../../../bocchi/public/assets/image/character-image/gotoh.png" alt="Gotoh Hitori" class="thumbnail"></a>
+                    <a href="#" onclick="changeCharacter('Nijika')"><img src="../../../bocchi/public/assets/image/character-image/nijika.png" alt="Nijika" class="thumbnail"></a>
+                    <a href="#" onclick="changeCharacter('Ryo')"><img src="../../../bocchi/public/assets/image/character-image/ryo.png" alt="Ryo" class="thumbnail"></a>
+                    <a href="#" onclick="changeCharacter('Kita')"><img src="../../../bocchi/public/assets/image/character-image/kita.png" alt="Kita" class="thumbnail"></a>
                 </div>
             </div>
             
@@ -83,10 +83,10 @@
                     <div class="photos-and-colors">
                         <div class="photos" id="photos">
                             <div class="photo-1">
-                                <img src="../../../public/assets/image/characters-small-photos/bocchi-1.png" alt="" class="photo" id="photo-one">
+                                <img src="../../../bocchi/public/assets/image/characters-small-photos/bocchi-1.png" alt="" class="photo" id="photo-one">
                             </div>
                             <div class="photo-2">
-                                <img src="../../../public/assets/image/characters-small-photos/bocchi-2.png" alt="" class="photo" id="photo-two">
+                                <img src="../../../bocchi/public/assets/image/characters-small-photos/bocchi-2.png" alt="" class="photo" id="photo-two">
                             </div>
                         </div>
                         <div class="color-palettes">
@@ -99,7 +99,7 @@
                 
                 <div class="character-images">
                     
-                    <img src="../../../public/assets/image/character-image/gotoh.svg" alt="Gotoh Hitori Image" class="character-image">
+                    <img src="../../../bocchi/public/assets/image/character-image/gotoh.svg" alt="Gotoh Hitori Image" class="character-image">
                 </div>
                 
                 <div class="character-description" id="characterDescription">
