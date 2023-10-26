@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+    color:  black;
+
+}
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+html {
+    background-color: #081b29;
+    
+    overflow-y: scroll;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*The padding of "2rem" symbolize the padding for the top of and bottom padding (in which if will give a few spaces from the top) , and the "9% meaning for the left and right padding (Making the header won't be near the edgest of the left and right page) */
+    padding: 1rem;
+    /*The background will be transparent/there's nothing for the background*/
+    background: #1e1e1e;
+    
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+    /*The display is set to flex so the logo and the navbar is in the same line with each other (remember, there is only 2 tags inside the header tag (the logo and the navbar tag) )*/
+    
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header > nav > a {
+    font-size: 1.4rem;
+    
+    color :rgb(244, 244, 50);
+    font-weight: 700;
+    transition: .15s ease;
+
+}
+nav {
+    width: 800px;
+    margin-left: 30%;
+}
+nav > a, img {
+    margin-left: 3rem;
+}
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #00abf0;
+    border-radius: 50%  ;
+}
+
+.headerimg {
+    cursor: pointer;    
+    height: 37px;
+}
+section {
+    /*This will set the width and height to be a full-screen 'AND'... it gives spaces, just delete the min-height or change it a little an you know*/
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+/*This is the 'home' class in which it consist with my own name, my future job, a lorep ipsum and two buttons*/
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Set the height of your container */
+    background: url('../assets/image/background-image/backgroundweb.png') no-repeat; 
+    
+    background-size: cover; 
+    background-position: center;
+}
+.homecontent {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.18); /* Adjust the last value (0.5) to control the darkness */
+}
+.image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.descriptions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 100px; 
+}
+.description {
+    
+    color: #fffb00;
+    width: 800px;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.59);
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 19px;
+    line-height: 1  ;
+    z-index: 1;
+}

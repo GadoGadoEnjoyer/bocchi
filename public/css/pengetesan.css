@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+    color:  black;
+
+}
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+html {
+    
+    
+    overflow-y: scroll;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*The padding of "2rem" symbolize the padding for the top of and bottom padding (in which if will give a few spaces from the top) , and the "9% meaning for the left and right padding (Making the header won't be near the edgest of the left and right page) */
+    padding: 0.6rem;
+    /*The background will be transparent/there's nothing for the background*/
+    background: #1e1e1e;
+    
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+    /*The display is set to flex so the logo and the navbar is in the same line with each other (remember, there is only 2 tags inside the header tag (the logo and the navbar tag) )*/
+    
+    z-index: 1000;
+}
+#characterNameVA, #characterInfo, .character-images {
+    transition: 0.5s ease;
+}
+.site-header > .main-navigation > a {
+    font-size: 1.4rem;
+    
+    color :rgb(244, 244, 50);
+    font-weight: 700;
+    transition: .15s ease;
+    text-decoration: none;
+}
+.site-header > .main-navigation > a.active {
+    padding-bottom: 1.2px;
+    border-bottom: 2px solid rgb(244, 244, 50);
+    color:rgb(244, 244, 50);
+    
+}
+
+.main-navigation {
+
+    padding: 0.7rem 22%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.header-logo {
+    cursor: pointer;    
+    height: 37px;
+}
+
+.character-info {
+    background-color: #0E0E0E;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 5rem;
+    width: 650px;
+    height: 100vh;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+.section-title {
+    font-size: 2.6rem;
+    color: white;   
+    font-weight: 600;
+}
+
+.character-section {
+    background-color: #000000;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.character-navigation {
+    display: flex;
+    margin-top: 0.6rem;
+    flex-direction: row;
+}
+.character-navigation > a {
+    margin-right: 5rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: 0.15s ease;
+    color: white;
+    
+}
+.character-navigation > a.active {
+    padding-bottom: 1.2px;
+    border-bottom: 2px solid rgb(244, 244, 50);
+    color:rgb(244, 244, 50);
+    
+}
+
+.character-name-va > h2 {
+    margin-top: 1.2rem;
+    font-size: 4.5rem;
+    color: #FF00C7;
+    
+}
+.character-name-va > p {
+    margin-top: -0.4rem;
+    font-weight: 600;
+    color: white;
+}
+.info-column > p{
+    color: white;
+    font-size: 1.5rem;
+    
+}
+.attribute-list {
+    font-weight: 600;
+}
+.character-info-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 50px
+}
+
+.rectangle-image {
+    position: relative; 
+    top: 0;
+    right: 120px;
+    z-index: 0;
+    height: 30%;
+}       
+.character-image {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.character-description > p {
+    background: rgba(0,0,0,0.38);
+    color: white;
+    z-index: 100;
+    width: 500px;
+    position: absolute;
+    top: 700px;
+    right: 100px; 
+    border-radius: 4px;   
+}
+.thumbnail {
+    height: 6rem;
+}
+.transition-effect {
+    transition: 1s ease; /* You can adjust the duration and timing function as per your preference */
+}
+/* Add a CSS class with transition properties */
+@media (max-width: 1400px) {
+    
+    .character-navigation > a {
+        font-size: 1rem;
+        margin-right: 2rem;
+    }
+    .rectangle-image {
+        display: none;
+    }
+    .character-image {
+        height: 60%;
+    } 
+    
+    .charimages {
+        z-index: 0;
+    }
+    .character-name-va > h2{
+        line-height: 0.9;
+    }
+    .character-name-va > p {
+        margin-top: 0.1rem;
+    }
+    .main-navigation {
+
+        padding: 0.7rem 11%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}

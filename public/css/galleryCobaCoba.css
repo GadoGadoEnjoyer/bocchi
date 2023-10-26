@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=Poppins:wght@400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+    color:  black;
+
+}
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+html {
+    
+    
+    overflow-y: scroll;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*The padding of "2rem" symbolize the padding for the top of and bottom padding (in which if will give a few spaces from the top) , and the "9% meaning for the left and right padding (Making the header won't be near the edgest of the left and right page) */
+    padding: 0.6rem;
+    /*The background will be transparent/there's nothing for the background*/
+    background: #1e1e1e;
+    
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+    /*The display is set to flex so the logo and the navbar is in the same line with each other (remember, there is only 2 tags inside the header tag (the logo and the navbar tag) )*/
+    
+    z-index: 100;
+}
+
+.site-header > .main-navigation > a {
+    
+    
+    color :rgb(244, 244, 50);
+    font-weight: 700;
+    transition: .15s ease;
+    text-decoration: none;
+}
+.site-header > .main-navigation > a.active {
+    padding-bottom: 1.2px;
+    border-bottom: 2px solid rgb(244, 244, 50);
+    color:rgb(244, 244, 50);
+    
+}
+.main-navigation {
+
+    padding: 0.7rem 22%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.header-logo {
+    cursor: pointer;    
+    height: 37px;
+}
+
+.gallery-info {
+    background-color: #0E0E0E;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 5rem;
+    width: 600px;
+    height: 100vh;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+.section-title {
+    font-size: 2.6rem;
+    color: white;   
+    font-weight: 600;
+}
+
+.gallery-section {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.gallery-navigation {
+    display: flex;
+    margin-top: 0.6rem;
+    flex-direction: row;
+    width: 600px;
+}
+.gallery-navigation > a {
+    margin-right: 5rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    
+    transition: 0.15s ease;
+    color: white;
+    
+}
+.gallery-navigation > a.active {
+    padding-bottom: 1.2px;
+    border-bottom: 2px solid rgb(244, 244, 50);
+    color:rgb(244, 244, 50);
+    
+}
+/* Your existing CSS styles go here */
+
+.gallery-container {
+        display: flex;
+        flex: 1;
+}
+
+.gallery-left {
+    margin-top: 2rem;
+        
+    width: 450px; /* (159px * 2 columns) */
+    height: 70vh;
+    overflow-y: auto;
+        
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.gallery-left img {
+    width: 184px;
+    height: 129px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    object-fit:cover;
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+}
+
+.gallery-right {
+    flex: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-right img {
+    border-radius: 30px;
+    width: 70%;
+    height: 55%;
+    object-fit: cover;
+}
+    
+::-webkit-scrollbar {
+    display: none;
+}
+/* Your existing CSS styles go here */
+
+@media  (max-width: 1400px) {
+    .gallery-section {
+        background-color: #000;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery-info {
+        
+        width: 100%;
+        align-items: center;
+        
+    }
+
+    .gallery-left {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+        margin-right: 1rem;
+    }
+
+    .gallery-left img {
+        width: calc(50% - 20px); /* 20px margin for each image */
+        height: auto;
+        margin: 10px;
+    }
+    .gallery-right {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+    }
+    
+    .gallery-right img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 0;
+    }
+    .section-title {
+        text-align: center;
+    }
+    .gallery-navigation > a {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-right: 3rem;
+    }
+}
