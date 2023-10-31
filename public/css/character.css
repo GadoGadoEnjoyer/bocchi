@@ -77,7 +77,12 @@ main{
 }
 a+a {
     margin-left: 1vw;
-  }
+    font-size: 2rem;
+}
+b+p{
+    margin-left: 1vh;
+    font-size: 1.5rem;
+}
 .charmain{
     color:#000000;
 }
@@ -85,4 +90,8 @@ a+a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 1em;
+}
+h1{
+    color:yellow;
+    font-size:3rem;
 }
