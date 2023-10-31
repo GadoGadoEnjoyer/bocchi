@@ -61,23 +61,34 @@ nav > a, img {
     height: 3vh; 
 }
 
-.post-container {
-    width: 300px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    text-align: center;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
 }
 
-.post-container h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.post-container {
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Adjust max-width as needed for responsiveness */
 }
 
-.post-container img {
+h1 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 4px;
 }
