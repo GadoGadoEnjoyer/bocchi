@@ -20,7 +20,28 @@
     </header>
         <main>
             <div class="chardesc">
-                
+                <h3>Gallery</h3>
+                <div class="charnav">
+                    <a>characters</a>
+                    <a>Band Photos</a>
+                    <a>Arts</a>
+                </div>
+                <h1>Ijicji Nijika</h1>
+                <sub>VA:Suzushiro, Sayumi</sub>
+                <div class="desc">
+                    <b>Birthday</b>
+                    <p>May 29</p>
+                    <b>Gender</b>
+                    <p>Female</p>
+                    <b>Height</b>
+                    <p>154cm</p>
+                    <b>Weight</b>
+                    <p>48kg</p>
+                    <b>Hair Color</b>
+                    <p>Blonde</p>
+                    <b>Eye Color</b>
+                    <p>Vermillion</p>
+                </div>
             </div>
             <div class="charmain">
                 
