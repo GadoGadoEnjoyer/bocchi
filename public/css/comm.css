@@ -8,7 +8,7 @@
     border: none;
     outline: none;
     font-family: 'Poppins';
-    color:  black;
+    color: white;
 }
 
 html {
@@ -41,22 +41,43 @@ html {
 }
 
 .header > nav > a {
-    font-size: 2vw; /* Use viewport units for font size */
+    font-size: 2vw; 
     color: rgb(244, 244, 50);
     font-weight: 700;
     transition: 0.15s ease;
 }
 
 nav {
-    width: 100%; /* Change width to 100% to fill the header */
-    text-align: center; /* Center-align the elements within the nav */
+    width: 100%;
+    text-align: center; 
 }
 
 nav > a, img {
-    margin: 0 3vw; /* Use viewport units for margin */
+    margin: 0 3vw; 
 }
 
 .headerimg {
     cursor: pointer;
-    height: 3vh; /* Use viewport units for height */
+    height: 3vh; 
+}
+
+.post-container {
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.post-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }

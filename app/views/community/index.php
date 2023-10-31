@@ -16,6 +16,8 @@
             <a href="<?php echo(BASEURL . "/community")?>">Community</a>
         </nav>
     </header>
+    <br>
+    <main>
         <?php 
         foreach($data as $post){
             echo('<div class="post-container">');
@@ -24,5 +26,7 @@
             echo('</div>');
         } 
         ?>
-    </body>    </html>
+    </main>
+    </body>    
+</html>
 
