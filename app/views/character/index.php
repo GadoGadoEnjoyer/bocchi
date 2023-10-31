@@ -9,19 +9,15 @@
     </head>
 
     <body>
-        <header class="site-header">
-            <nav class="main-navigation" id="mainNav">
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Music</a>
-                <a href="../../../bocchi/public/html/index.html">
-                    <img src="../../../bocchi/public/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png  " alt="Bocchi the Rock! Logo" class="header-logo">
-                </a>
-                <a href="#" class="nav-link active">Gallery</a>
-                <a href="#" class="nav-link">Community</a>
-            </nav>
-        </header>
-
-       
+    <header class="header">
+        <nav class="navigation">
+            <a href="<?php echo(BASEURL . "/about")?>">About</a>
+            <a href="<?php echo(BASEURL . "/music")?>">Music</a>
+            <img src="<?php echo(BASEURL . "/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png")?>" alt="" class="headerimg">
+            <a href="<?php echo(BASEURL . "/gallery")?>">Gallery</a>
+            <a href="<?php echo(BASEURL . "/community")?>">Community</a>
+        </nav>
+    </header>
     </body>
 
 </html>
