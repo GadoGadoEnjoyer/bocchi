@@ -4,49 +4,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
     font-family: 'Poppins';
-    color:  black;
+    color: white;
+}
 
-}
-:root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
-}
 html {
-    
-    
+    background-color: #081b29;
     overflow-y: scroll;
 }
+
 html::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
-.site-header {
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /*The padding of "2rem" symbolize the padding for the top of and bottom padding (in which if will give a few spaces from the top) , and the "9% meaning for the left and right padding (Making the header won't be near the edgest of the left and right page) */
-    padding: 0.6rem;
-    /*The background will be transparent/there's nothing for the background*/
+    padding: 1rem;
     background: #1e1e1e;
-    
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
-    /*The display is set to flex so the logo and the navbar is in the same line with each other (remember, there is only 2 tags inside the header tag (the logo and the navbar tag) )*/
-    
-    z-index: 1000;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.header > nav > a {
+    font-size: 2vw; 
+    color: rgb(244, 244, 50);
+    font-weight: 700;
+    transition: 0.15s ease;
+}
+
+nav {
+    width: 100%;
+    text-align: center; 
+}
+
+nav > a, img {
+    margin: 0 3vw; 
+}
+
+.headerimg {
+    cursor: pointer;
+    height: 3vh; 
+}
+
 #characterNameVA, #characterInfo, .character-images {
     transition: 0.5s ease;
 }
