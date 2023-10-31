@@ -20,7 +20,9 @@
     </header>
         <main>
             <div class="chardesc">
-                <h2>Gallery</h2>
+                <h1>Gallery</h1>
+                <br>
+                <br>
                 <div class="charnav">
                     <a>characters</a>
                     <a>Band Photos</a>

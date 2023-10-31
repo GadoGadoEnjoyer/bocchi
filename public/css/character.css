@@ -75,7 +75,7 @@ main{
     align-items: center;
     color:#040f16;
 }
-a+a {
+.charnav > a {
     margin-left: 1vw;
     font-size: 2rem;
 }
@@ -92,6 +92,9 @@ b+p{
     row-gap: 1em;
 }
 h1{
-    color:yellow;
+    color:#F3D365;
     font-size:3rem;
+}
+sub{
+    margin-top: 1vw;
 }
