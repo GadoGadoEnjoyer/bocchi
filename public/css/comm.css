@@ -61,7 +61,6 @@ nav > a, img {
     height: 3vh; 
 }
 
-
 main {
     display: flex;
     flex-wrap: wrap;
@@ -80,7 +79,6 @@ main {
     text-align: center;
     width: 100%;
     max-width: 300px; /* Adjust max-width as needed for responsiveness */
-    display: inline-block; /* Change display to inline-block */
 }
 
 h1 {
@@ -91,8 +89,6 @@ h1 {
 
 img {
     max-width: 100%;
-    max-height: 100%; /* Add this line to ensure the image doesn't overflow */
-    object-fit: cover; /* Add this line to make the image cover the entire container */
+    height: auto;
     border-radius: 4px;
-    display: block; /* Change display to block */
 }
