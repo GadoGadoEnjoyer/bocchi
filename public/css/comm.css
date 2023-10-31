@@ -38,7 +38,6 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px; /* Add margin at the bottom to separate header from main */
 }
 
 .header > nav > a {
@@ -69,7 +68,7 @@ main {
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2vw;
 }
 
 .post-container {
