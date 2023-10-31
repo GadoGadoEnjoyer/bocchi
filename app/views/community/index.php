@@ -4,20 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title> 
-    <link rel="stylesheet" href="<?php echo(BASEURL . "/css/index.css")?>">       
-    <style>
-        .post-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .post-container img {
-            max-width: 100%;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="<?php echo(BASEURL . "/css/comm.css")?>">       
     </head>
     <body>
     <header class="header">
@@ -28,9 +15,6 @@
             <a href="<?php echo(BASEURL . "/gallery")?>">Gallery</a>
             <a href="<?php echo(BASEURL . "/community")?>">Community</a>
         </nav>
-        <div class="user-icon">
-        
-        </div>
     </header>
         <?php 
         foreach($data as $post){
