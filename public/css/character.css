@@ -75,6 +75,14 @@ main{
     align-items: center;
     color:#040f16;
 }
+a+a {
+    margin-left: 1vw;
+  }
 .charmain{
     color:#000000;
+}
+.desc{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1em;
 }
