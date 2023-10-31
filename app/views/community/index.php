@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community</title>        
+    <title>Community</title> 
+    <link rel="stylesheet" href="<?php echo(BASEURL . "/css/index.css")?>">       
     <style>
         .post-container {
             display: flex;
@@ -19,6 +20,18 @@
     </style>
     </head>
     <body>
+    <header class="header">
+        <nav class="navigation">
+            <a href="<?php echo(BASEURL . "/about")?>">About</a>
+            <a href="<?php echo(BASEURL . "/music")?>">Music</a>
+            <img src="<?php echo(BASEURL . "/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png")?>" alt="" class="headerimg">
+            <a href="<?php echo(BASEURL . "/gallery")?>">Gallery</a>
+            <a href="<?php echo(BASEURL . "/community")?>">Community</a>
+        </nav>
+        <div class="user-icon">
+        
+        </div>
+    </header>
         <?php 
         foreach($data as $post){
             echo('<div class="post-container">');
