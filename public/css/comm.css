@@ -9,50 +9,89 @@
     outline: none;
     font-family: 'Poppins';
     color:  black;
-
 }
+
 html {
     background-color: #081b29;
-    
     overflow-y: scroll;
 }
+
 html::-webkit-scrollbar {
     display: none;
 }
 
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem;
-    background: #1e1e1e;   
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);   
+    background: #1e1e1e;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     z-index: 100;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
 .header > nav > a {
     font-size: 1.4rem;
-    color :rgb(244, 244, 50);
+    color: rgb(244, 244, 50);
     font-weight: 700;
-    transition: .15s ease;
-
+    transition: 0.15s ease;
 }
+
 nav {
     width: 800px;
     margin-left: 30%;
 }
-nav > a, img {
+
+nav > a,
+img {
     margin-left: 3rem;
 }
+
 .headerimg {
-    cursor: pointer;    
+    cursor: pointer;
     height: 37px;
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 1rem 2%;
+    }
+
+    nav {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    nav > a,
+    img {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1rem 2%;
+    }
+
+    nav {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    nav > a,
+    img {
+        margin-left: 1rem;
+    }
 }
