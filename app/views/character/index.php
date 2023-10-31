@@ -28,7 +28,7 @@
                     <a>Band Photos</a>
                     <a>Arts</a>
                 </div>
-                <name>Ijicji Nijika</name>
+                <name>Ijichi Nijika</name>
                 <sub>VA:Suzushiro, Sayumi</sub>
                 <div class="desc">
                     <b>Birthday</b>

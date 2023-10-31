@@ -72,15 +72,18 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color:#040f16;
 }
 .charnav > a {
     margin-left: 1vw;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 b+p{
     margin-left: 1vh;
+    font-size: 1.5rem;
+}
+p+b{
     font-size: 1.5rem;
 }
 .charmain{
@@ -95,12 +98,9 @@ name{
     color:#F3D365;
     font-size:3rem;
     font-weight: bold;
-    text-align: left;
 }
 sub{
     font-weight: bold;
-    align-self: flex-start;
 }
 h1{
-    align-self: flex-start;
 }
