@@ -18,6 +18,14 @@
             <a href="<?php echo(BASEURL . "/community")?>">Community</a>
         </nav>
     </header>
+        <main>
+            <div class="chardesc">
+                
+            </div>
+            <div class="charmain">
+                
+            </div>
+        </main>
     </body>
 
 </html>

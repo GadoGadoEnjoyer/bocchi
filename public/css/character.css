@@ -60,3 +60,20 @@ nav > a, img {
     cursor: pointer;
     height: 3vh; 
 }
+
+
+main{
+    display:grid;
+    grid-template-columns: 2fr 5fr;
+}
+.chardesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    color:#040f16;
+}
+.charmain{
+    color:#02070a;
+}
