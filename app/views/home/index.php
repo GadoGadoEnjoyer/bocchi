@@ -9,11 +9,11 @@
 <body>
     <header class="header">
         <nav class="navigation">
-            <a href="#">About</a>
-            <a href="#">Music</a>
+            <a href="/about">About</a>
+            <a href="/music">Music</a>
             <img src="<?php echo(BASEURL . "/assets/image/logo-image/Bocchi_the_Rock!_logo.svg.png")?>" alt="" class="headerimg">
-            <a href='#'>Gallery</a>
-            <a href="#">Community</a>
+            <a href='/gallery'>Gallery</a>
+            <a href="/community">Community</a>
         </nav>
         <div class="user-icon">
         
