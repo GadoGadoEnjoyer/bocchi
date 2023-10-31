@@ -65,13 +65,14 @@ nav > a, img {
 main{
     display:grid;
     grid-template-columns: 2fr 5fr;
+    height: 100%;
+    margin-top: 10vh;
 }
 .chardesc {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
     color:#040f16;
 }
 .charmain{
