@@ -89,6 +89,7 @@ h1 {
 
 img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%; /* Add this line to ensure the image doesn't overflow */
+    object-fit: cover; /* Add this line to make the image cover the entire container */
     border-radius: 4px;
 }
