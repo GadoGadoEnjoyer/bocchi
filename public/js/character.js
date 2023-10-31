@@ -1,53 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const mainNavLinks = document.querySelectorAll(".main-navigation .nav-link")    ;
-    const characterNavLinks = document.querySelectorAll(".character-navigation .nav-link");
-
-    function handleNavLinkClick(links) {
-        links.forEach(link => {
-            link.addEventListener("click", function(event) {
-                // Remove the 'active' class from all links
-                links.forEach(link => {
-                    link.classList.remove("active");
-                });
-
-                // Add the 'active' class to the clicked link
-                this.classList.add("active");
-            });
-        });
-    }
-
-    handleNavLinkClick(mainNavLinks);
-    handleNavLinkClick(characterNavLinks);
-});
-// Function to apply styles to the iframe
-
-function changeCharacter(characterName) {
-    const characterNameVA = document.getElementById('characterNameVA');
-    const charInformation = document.getElementById('characterInfo');
-    const charSynopsis = document.getElementById('characterDescription');
-    const charImages = document.querySelector('.character-images');
-    const charRectangles = document.getElementById('rectangle');
-    const charVideoContainer = document.getElementById('videos');
-    const charLabelCharacterPV = document.querySelector('.label-PV');
-    const charSmallPhotos = document.getElementById('photos');
-    const colorPaletteOne = document.getElementById('one');
-    const colorPaletteTwo = document.getElementById('two');
-    const colorPaletteThree = document.getElementById('three');
-    const colorPalettes = document.querySelectorAll('.color');
-    const smallPhoto = document.querySelectorAll('.photo');
-    
-    characterNameVA.style.opacity = 0;
-    charSmallPhotos.style.opacity = 0;
-    charInformation.style.opacity = 0;
-    charVideoContainer.style.opacity = 0;
-    charImages.style.opacity = 0;
-    colorPaletteOne.style.opacity = 0;
-    colorPaletteTwo.style.opacity = 0;
-    colorPaletteThree.style.opacity = 0;
-    charSynopsis.style.opacity = 0;
-    charRectangles.style.opacity = 0;
-    charLabelCharacterPV.style.opacity = 0;
-    // Example character data, you can replace this with your actual character data
     const charactersData = {
         'Gotoh Hitori': {
             name: 'Gotoh Hitori',
@@ -227,5 +178,4 @@ function changeCharacter(characterName) {
         charSmallPhotos.style.opacity = 1;
         
     }, 350);
-    
-}
+});
