@@ -52,3 +52,7 @@ nav {
 nav > a, img {
     margin-left: 3rem;
 }
+.headerimg {
+    cursor: pointer;    
+    height: 37px;
+}
