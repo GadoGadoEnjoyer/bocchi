@@ -91,10 +91,14 @@ b+p{
     grid-template-columns: 1fr 1fr;
     row-gap: 1em;
 }
-h1{
+name{
     color:#F3D365;
     font-size:3rem;
 }
 sub{
-    margin-top: 1vw;
+    font-weight: bold;
+    align-self: left;
+}
+h1{
+    align-self: left;
 }

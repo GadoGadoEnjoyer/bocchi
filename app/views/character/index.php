@@ -24,11 +24,11 @@
                 <br>
                 <br>
                 <div class="charnav">
-                    <a>characters</a>
+                    <a>Characters</a>
                     <a>Band Photos</a>
                     <a>Arts</a>
                 </div>
-                <h1>Ijicji Nijika</h1>
+                <name>Ijicji Nijika</name>
                 <sub>VA:Suzushiro, Sayumi</sub>
                 <div class="desc">
                     <b>Birthday</b>
