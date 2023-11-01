@@ -175,8 +175,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
                             // Change the line color with a transition
                             const lineElement = document.getElementById('line');
+                            const nameElement = document.getElementById('name');
                             lineElement.style.transition = 'background-color 0.5s';
                             lineElement.style.backgroundColor = character.css.backgroundColor;
+                            nameElement.style.transition = 'color 0.5s';
+                            nameElement.style.color = character.css.color;
 
                             // Remove fade-out class from all elements
                             for (const key in elements) {
