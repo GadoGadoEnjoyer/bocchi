@@ -119,19 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     const buttons = ['Gotoh Hitori', 'Nijika', 'Ryo', 'Kita'];
-    const elements = {
-        name: 'name',
-        va: 'va',
-        birthday: 'birthday',
-        gender: 'gender',
-        height: 'height',
-        weight: 'weight',
-        hairColor: 'hairColor',
-        eyeColor: 'eyeColor',
-        characterImage: 'images.character',
-        line: 'line'
-    };
-
     buttons.forEach((characterName, index) => {
         const button = document.getElementById(`button${index + 1}`);
         button.addEventListener('click', () => updateCharacterInfo(characterName));
@@ -139,11 +126,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
+        const elements = {
+            name: 'name',
+            va: 'va',
+            birthday: 'birthday',
+            gender: 'gender',
+            height: 'height',
+            weight: 'weight',
+            hairColor: 'hairColor',
+            eyeColor: 'eyeColor',
+            characterImage: 'images.character',
+            line: 'line',
+        };
 
-        // Add the fade-out class to elements to make them fade out
+        // Fade out elements
         for (const key in elements) {
-            if (key !== 'line' && key !== 'btext') {
-                document.getElementById(elements[key]).classList.add('fade-out');
+            const element = document.getElementById(elements[key]);
+            element.classList.add('fade-out');
+            if (key === 'line') {
+                element.style.backgroundColor = character.css.backgroundColor;
             }
         }
 
@@ -151,25 +152,17 @@ document.addEventListener("DOMContentLoaded", function() {
         newCharacterImage.src = character.images.character;
         newCharacterImage.onload = () => {
             const characterImageElement = document.getElementById(elements.characterImage);
-            characterImageElement.style.opacity = 0; // Set opacity to 0 initially
             characterImageElement.src = newCharacterImage.src;
+            characterImageElement.classList.add('fade-in');
 
             setTimeout(() => {
-                characterImageElement.style.opacity = 1; // Set opacity to 1 after loading
+                // Update content and remove fade-out class
                 for (const key in elements) {
-                    if (key !== 'line' && key !== 'btext') {
-                        document.getElementById(elements[key]).textContent = character[key];
-                        document.getElementById(elements.line).style.backgroundColor = character.css.backgroundColor;
-                        document.getElementById(elements[key]).classList.remove('fade-out');
-                    }
+                    const element = document.getElementById(elements[key]);
+                    element.textContent = character[key];
+                    element.classList.remove('fade-out');
                 }
-            }, 500); // You can adjust the delay as needed for smoother transitions
-        }
-        
-        // Change color of all elements with class 'btext'
-        const btextElements = document.getElementsByClassName(elements.btext);
-        for (const btext of btextElements) {
-            btext.style.color = character.css.color;
-        }
+            }, 500); // Adjust the delay as needed for smoother transitions
+        };
     }
 });
