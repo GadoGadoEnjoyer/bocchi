@@ -161,10 +161,13 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }, 500);
       
-        // Use another setTimeout to update the image after the text has faded out
-        setTimeout(() => {
-          elements.characterImage.src = character.images.character;
+        // Create a new Image element for preloading the character image
+        const newCharacterImage = new Image();
+        newCharacterImage.src = character.images.character;
+        newCharacterImage.onload = () => {
+          // Once the image is fully loaded, update the image and apply the fade-in class
+          elements.characterImage.src = newCharacterImage.src;
           elements.characterImage.classList.add('fade-in');
-        }, 300);
+        };
       }
-    });      
+});           
