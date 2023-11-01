@@ -165,6 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
           elements.characterImage.src = character.images.character;
           elements.characterImage.classList.add('fade-in');
-        }, 500);
+        }, 300);
       }
     });      
