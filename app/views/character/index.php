@@ -47,8 +47,8 @@
             </div>
             <div class="charmain">
                 <div class="line"></div>
+                <img src="<?php echo(BASEURL . "/assets/image/character-image/Ijichi_Nijika.png")?>" alt="" class="charimg">
             </div>
-            <img src="<?php echo(BASEURL . "/assets/image/character-image/Ijichi_Nijika.png")?>" alt="" class="charimg">
         </main>
     </body>
 

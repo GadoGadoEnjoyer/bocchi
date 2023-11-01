@@ -108,5 +108,5 @@ sub{
     width:2vw;
     height: 100%;
     transform : rotate(-60deg);
-    display:inline;
+    display:inline-block;
 }
