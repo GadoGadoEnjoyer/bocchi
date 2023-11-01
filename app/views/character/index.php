@@ -44,14 +44,14 @@
                     <b>Eye Color</b>
                     <p id="eyeColor">Vermillion</p>
                 </div>
+                <img id="button1" src="<?php echo(BASEURL . "/assets/image/character-small-photos/bocchi-1.png")?>" alt="">
+                <img id="button2" src="<?php echo(BASEURL . "/assets/image/character-small-photos/nijika-1.png")?>" alt="">
+                <img id="button3" src="<?php echo(BASEURL . "/assets/image/character-small-photos/ryo-1.png")?>" alt="">
+                <img id="button4" src="<?php echo(BASEURL . "/assets/image/character-small-photos/kita-1.png")?>" alt="">
             </div>
             <div class="charmain">
                 <div class="line"></div>
                 <img id="images.character" src="<?php echo(BASEURL . "/assets/image/character-image/nijika.png")?>" alt="" class="charimg">
-                <button id="button1">Character 1</button>
-                <button id="button2">Character 2</button>
-                <button id="button3">Character 3</button>
-                <button id="button4">Character 4</button>
             </div>
         </main>
     </body>
