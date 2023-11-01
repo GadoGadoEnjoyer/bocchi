@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Remove fade-out class from all btext elements
             btextElements.forEach(element => {
                 element.classList.remove('fade-out');
-            }
+            });
         }, 500);
     }
 });
