@@ -137,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function() {
             eyeColor: 'eyeColor',
             characterImage: 'images.character',
             line: 'line',
-            btext: 'btext'
         };
     
         for (const key in elements) {
