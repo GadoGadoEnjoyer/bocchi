@@ -76,6 +76,7 @@ main{
     background-color:#040f16;
     padding-left:2vw;
     z-index: 5;
+    margin-top: -10vw;
 }
 .charnav > a {
     margin-right: 1vw;
