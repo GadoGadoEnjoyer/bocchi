@@ -126,3 +126,12 @@ sub{
     right:1vw;
     
 }
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+  
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+}

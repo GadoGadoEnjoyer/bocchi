@@ -136,14 +136,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
-        document.getElementById('name').textContent = character.name;
-        document.getElementById('va').textContent = character.va;
-        document.getElementById('birthday').textContent = character.birthday;
-        document.getElementById('gender').textContent = character.gender;
-        document.getElementById('height').textContent = character.height;
-        document.getElementById('weight').textContent = character.weight;
-        document.getElementById('hairColor').textContent = character.hairColor;
-        document.getElementById('eyeColor').textContent = character.eyeColor;
-        document.getElementById('images.character').src = character.images.character;
+        const elements = {
+            name: document.getElementById('name'),
+            va: document.getElementById('va'),
+            birthday: document.getElementById('birthday'),
+            gender: document.getElementById('gender'),
+            height: document.getElementById('height'),
+            weight: document.getElementById('weight'),
+            hairColor: document.getElementById('hairColor'),
+            eyeColor: document.getElementById('eyeColor'),
+            characterImage: document.getElementById('images.character')
+          };
+
+            // Add the fade-out class to elements to make them fade out
+  for (const key in elements) {
+    elements[key].classList.add('fade-out');
+  }
+
+  // Use a setTimeout to update the content and remove the fade-out class
+  setTimeout(() => {
+    for (const key in elements) {
+      elements[key].textContent = character[key];
+      elements[key].classList.remove('fade-out');
+    }
+  }, 500); // You can adjust the delay (in milliseconds) as needed
+
+  // Add the fade-in class to make the character image fade in
+  elements.characterImage.src = character.images.character;
+  elements.characterImage.classList.add('fade-in');
     }
 });
