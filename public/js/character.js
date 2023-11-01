@@ -139,35 +139,38 @@ document.addEventListener("DOMContentLoaded", function() {
             line: 'line',
             btext: 'btext'
         };
-
+    
         for (const key in elements) {
-            const element = document.getElementById(elements[key]);
-            element.style.opacity = 0;
+            document.getElementById(elements[key]).classList.add('fade-out');
         }
+        const btextElements = document.getElementsByClassName('btext');
 
+        for (const element of btextElements) {
+            element.classList.add('fade-out');
+        }
+    
         const newCharacterImage = new Image();
-        newCharacterImage.src = character.images.character;
-
         newCharacterImage.onload = () => {
             const characterImageElement = document.getElementById(elements.characterImage);
-            characterImageElement.src = newCharacterImage.src;
-            characterImageElement.classList.add('fade-in');
-
-            setTimeout(() => {
-                for (const key in elements) {
-                    const element = document.getElementById(elements[key]);
-                    element.textContent = character[key];
-                    element.style.opacity = 1;
-                }
-
-                const lineElement = document.getElementById(elements.line);
-                lineElement.style.backgroundColor = character.css.backgroundColor;
-
-                const btextElements = document.getElementsByClassName(elements.btext);
-                for (const btextElement of btextElements) {
-                    btextElement.style.color = character.css.color;
-                }
-            }, 500);
+            characterImageElement.onload = () => {
+                characterImageElement.src = newCharacterImage.src;
+                characterImageElement.classList.add('fade-in');
+    
+                setTimeout(() => {
+                    for (const key in elements) {
+                        const element = document.getElementById(elements[key]);
+                        element.textContent = character[key];
+                        if (key === 'line') {
+                            element.style.backgroundColor = character.css.backgroundColor;
+                        }
+                        element.classList.remove('fade-out');
+                    }
+                    for (const element of btextElements) {
+                        element.classList.remove('fade-out');
+                    }
+                }, 500);
+            };
+            newCharacterImage.src = character.images.character;
         };
     }
 });
