@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
           weight: document.getElementById('weight'),
           hairColor: document.getElementById('hairColor'),
           eyeColor: document.getElementById('eyeColor'),
-          characterImage: document.getElementById('images.character')
+          characterImage: document.getElementById('characterImage')
         };
       
         // Add the fade-out class to elements to make them fade out
@@ -153,21 +153,22 @@ document.addEventListener("DOMContentLoaded", function() {
           elements[key].classList.add('fade-out');
         }
       
-        // Use a setTimeout to update the content and remove the fade-out class
-        setTimeout(() => {
-          for (const key in elements) {
-            elements[key].textContent = character[key];
-            elements[key].classList.remove('fade-out');
-          }
-        }, 500);
-      
         // Create a new Image element for preloading the character image
         const newCharacterImage = new Image();
         newCharacterImage.src = character.images.character;
+      
         newCharacterImage.onload = () => {
           // Once the image is fully loaded, update the image and apply the fade-in class
           elements.characterImage.src = newCharacterImage.src;
           elements.characterImage.classList.add('fade-in');
+      
+          // Use a setTimeout to update the content and remove the fade-out class after the image has faded in
+          setTimeout(() => {
+            for (const key in elements) {
+              elements[key].textContent = character[key];
+              elements[key].classList.remove('fade-out');
+            }
+          }, 500);
         };
       }
-});           
+            
