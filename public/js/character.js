@@ -124,10 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener('click', () => updateCharacterInfo(characterName));
     });
 
-    const characterImageElement = document.getElementById('images.character');
-    const btextElements = document.querySelectorAll('.btext');
-    const lineElement = document.getElementById('line');
-
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
         const elements = {
@@ -139,46 +135,74 @@ document.addEventListener("DOMContentLoaded", function() {
             weight: 'weight',
             hairColor: 'hairColor',
             eyeColor: 'eyeColor',
+            characterImage: 'images.character',
         };
 
-        // Fade out all elements
+        // Fade out all elements and the line
         for (const key in elements) {
             document.getElementById(elements[key]).classList.add('fade-out');
         }
 
-        // Fade out all btext elements
+        const lineElement = document.getElementById('line');
+        lineElement.style.transition = 'background-color 0.5s';
+        lineElement.style.backgroundColor = 'transparent';
+
+        const btextElements = document.querySelectorAll('.btext');
         btextElements.forEach(element => {
             element.classList.add('fade-out');
         });
 
-        // Add a class to prevent the image from fading in immediately
-        characterImageElement.classList.add('no-fade-in');
+        const newCharacterImage = new Image();
+        newCharacterImage.src = character.images.character;
 
-        // Use a setTimeout to change the image source after a delay
-        setTimeout(() => {
-            characterImageElement.classList.remove('no-fade-in');
-            characterImageElement.src = character.images.character;
-        }, 500);
+        // Create a promise for the image loading
+        const imagePromise = new Promise((resolve) => {
+            newCharacterImage.onload = resolve;
+        });
 
-        // Change the line color with a transition
-        lineElement.style.transition = 'background-color 0.5s';
-        lineElement.style.backgroundColor = character.css.backgroundColor;
+        // Wait for the image to load and the fade-out to complete
+        Promise.all([imagePromise, waitForTransition(elements)]).then(() => {
+            // Change the image after everything has faded out
+            const characterImageElement = document.getElementById(elements.characterImage);
+            characterImageElement.src = newCharacterImage.src;
 
-        // Use a setTimeout to update the content and remove the fade-out class
-        setTimeout(() => {
-            for (const key in elements) {
-                document.getElementById(elements[key]).textContent = character[key];
-            }
+            // Use a setTimeout to update the content and start the fade-in animation
+            setTimeout(() => {
+                for (const key in elements) {
+                    document.getElementById(elements[key]).textContent = character[key];
+                    document.getElementById(elements[key]).classList.remove('fade-out');
+                }
 
-            // Remove fade-out class from all elements
-            for (const key in elements) {
-                document.getElementById(elements[key]).classList.remove('fade-out');
-            }
+                // Start the fade-in animation for the btext elements
+                btextElements.forEach(element => {
+                    element.classList.remove('fade-out');
+                });
 
-            // Remove fade-out class from all btext elements
-            btextElements.forEach(element => {
-                element.classList.remove('fade-out');
+                // Change the line color with a delay to create a smoother transition
+                setTimeout(() => {
+                    lineElement.style.backgroundColor = character.css.backgroundColor;
+                }, 50);
+
+                // Remove the fade-in class from the character image
+                characterImageElement.classList.remove('fade-in');
+            }, 500);
+        });
+    }
+
+    function waitForTransition(elements) {
+        return new Promise((resolve) => {
+            const elementArray = Object.values(elements);
+            const transitionEnd = (event) => {
+                if (event.target === elementArray[elementArray.length - 1]) {
+                    elementArray.forEach(element => {
+                        element.removeEventListener('transitionend', transitionEnd);
+                    });
+                    resolve();
+                }
+            };
+            elementArray.forEach(element => {
+                element.addEventListener('transitionend', transitionEnd);
             });
-        }, 500);
+        });
     }
 });
