@@ -88,7 +88,7 @@ p+b{
     font-size: 1.5rem;
 }
 .charmain{
-    color:#000000;
+    background-color:#000000;
 }
 .desc{
     display: grid;
@@ -102,4 +102,11 @@ name{
 }
 sub{
     font-weight: bold;
+}
+.line{
+    background-color: #F3D365;
+    width:2vw;
+    height: 100%;
+    transform : rotate(-60deg);
+    display:inline;
 }
