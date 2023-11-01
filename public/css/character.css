@@ -106,11 +106,11 @@ sub{
 }
 .line{
     background-color: #F3D365;
-    width:7vw;
-    height: 100%;
+    width: 6vw;
+    height: 29vw;
     transform : rotate(60deg);
     display:inline-block;
     z-index:2;
-    margin-left: 2vw;
-    margin-bottom: 2vw;
+    margin-left: 5vw;
+    margin-top: -13vw;
 }
