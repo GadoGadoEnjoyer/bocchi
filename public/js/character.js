@@ -124,6 +124,10 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener('click', () => updateCharacterInfo(characterName));
     });
 
+    const characterImageElement = document.getElementById('images.character');
+    const btextElements = document.querySelectorAll('.btext');
+    const lineElement = document.getElementById('line');
+
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
         const elements = {
@@ -135,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
             weight: 'weight',
             hairColor: 'hairColor',
             eyeColor: 'eyeColor',
-            characterImage: 'images.character',
         };
 
         // Fade out all elements
@@ -144,39 +147,38 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Fade out all btext elements
-        const btextElements = document.querySelectorAll('.btext');
         btextElements.forEach(element => {
             element.classList.add('fade-out');
         });
 
-        const newCharacterImage = new Image();
-        newCharacterImage.src = character.images.character;
-        newCharacterImage.onload = () => {
-            const characterImageElement = document.getElementById(elements.characterImage);
-            characterImageElement.src = newCharacterImage.src;
-            characterImageElement.classList.add('fade-in');
+        // Add a class to prevent the image from fading in immediately
+        characterImageElement.classList.add('no-fade-in');
 
-            // Use a setTimeout to update the content and remove the fade-out class
-            setTimeout(() => {
-                for (const key in elements) {
-                    document.getElementById(elements[key]).textContent = character[key];
-                }
+        // Use a setTimeout to change the image source after a delay
+        setTimeout(() => {
+            characterImageElement.classList.remove('no-fade-in');
+            characterImageElement.src = character.images.character;
+        }, 500);
 
-                // Change the line color with transition
-                const lineElement = document.getElementById('line');
-                lineElement.style.transition = 'background-color 0.5s';
-                lineElement.style.backgroundColor = character.css.backgroundColor;
+        // Change the line color with a transition
+        lineElement.style.transition = 'background-color 0.5s';
+        lineElement.style.backgroundColor = character.css.backgroundColor;
 
-                // Remove fade-out class from all elements
-                for (const key in elements) {
-                    document.getElementById(elements[key]).classList.remove('fade-out');
-                }
+        // Use a setTimeout to update the content and remove the fade-out class
+        setTimeout(() => {
+            for (const key in elements) {
+                document.getElementById(elements[key]).textContent = character[key];
+            }
 
-                // Remove fade-out class from all btext elements
-                btextElements.forEach(element => {
-                    element.classList.remove('fade-out');
-                });
-            }, 500);
-        };
+            // Remove fade-out class from all elements
+            for (const key in elements) {
+                document.getElementById(elements[key]).classList.remove('fade-out');
+            }
+
+            // Remove fade-out class from all btext elements
+            btextElements.forEach(element => {
+                element.classList.remove('fade-out');
+            }
+        }, 500);
     }
 });
