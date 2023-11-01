@@ -159,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function() {
       elements[key].textContent = character[key];
       elements[key].classList.remove('fade-out');
     }
-  }, 500); // You can adjust the delay (in milliseconds) as needed
+  }, 300); 
 
-  // Add the fade-in class to make the character image fade in
-  elements.characterImage.src = character.images.character;
+  
   elements.characterImage.classList.add('fade-in');
+  elements.characterImage.src = character.images.character;
     }
 });
