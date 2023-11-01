@@ -137,32 +137,34 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
         const elements = {
-            name: document.getElementById('name'),
-            va: document.getElementById('va'),
-            birthday: document.getElementById('birthday'),
-            gender: document.getElementById('gender'),
-            height: document.getElementById('height'),
-            weight: document.getElementById('weight'),
-            hairColor: document.getElementById('hairColor'),
-            eyeColor: document.getElementById('eyeColor'),
-            characterImage: document.getElementById('images.character')
-          };
-
-            // Add the fade-out class to elements to make them fade out
-  for (const key in elements) {
-    elements[key].classList.add('fade-out');
-  }
-
-  // Use a setTimeout to update the content and remove the fade-out class
-  setTimeout(() => {
-    for (const key in elements) {
-      elements[key].textContent = character[key];
-      elements[key].classList.remove('fade-out');
-    }
-  }, 300); 
-
-  
-  elements.characterImage.classList.add('fade-in');
-  elements.characterImage.src = character.images.character;
-    }
-});
+          name: document.getElementById('name'),
+          va: document.getElementById('va'),
+          birthday: document.getElementById('birthday'),
+          gender: document.getElementById('gender'),
+          height: document.getElementById('height'),
+          weight: document.getElementById('weight'),
+          hairColor: document.getElementById('hairColor'),
+          eyeColor: document.getElementById('eyeColor'),
+          characterImage: document.getElementById('images.character')
+        };
+      
+        // Add the fade-out class to elements to make them fade out
+        for (const key in elements) {
+          elements[key].classList.add('fade-out');
+        }
+      
+        // Use a setTimeout to update the content and remove the fade-out class
+        setTimeout(() => {
+          for (const key in elements) {
+            elements[key].textContent = character[key];
+            elements[key].classList.remove('fade-out');
+          }
+        }, 500);
+      
+        // Use another setTimeout to update the image after the text has faded out
+        setTimeout(() => {
+          elements.characterImage.src = character.images.character;
+          elements.characterImage.classList.add('fade-in');
+        }, 500);
+      }
+    });      
