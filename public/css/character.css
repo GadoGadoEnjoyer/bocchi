@@ -74,9 +74,10 @@ main{
     justify-content: center;
     align-items: flex-start;
     color:#040f16;
+    margin-left:2vw;
 }
 .charnav > a {
-    margin-left: 1vw;
+    margin-right: 1vw;
     font-size: 1.5rem;
 }
 b+p{
@@ -96,11 +97,9 @@ p+b{
 }
 name{
     color:#F3D365;
-    font-size:3rem;
+    font-size:4rem;
     font-weight: bold;
 }
 sub{
     font-weight: bold;
-}
-h1{
 }
