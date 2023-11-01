@@ -141,11 +141,13 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         for (const key in elements) {
-            document.getElementById(elements[key]).classList.add('fade-out');
+            const element = document.getElementById(elements[key]);
+            element.style.opacity = 0;
         }
 
         const newCharacterImage = new Image();
         newCharacterImage.src = character.images.character;
+
         newCharacterImage.onload = () => {
             const characterImageElement = document.getElementById(elements.characterImage);
             characterImageElement.src = newCharacterImage.src;
@@ -153,9 +155,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
             setTimeout(() => {
                 for (const key in elements) {
-                    document.getElementById(elements[key]).textContent = character[key];
-                    document.getElementById(elements.line).style.backgroundColor = character.css.backgroundColor;
-                    document.getElementById(elements[key]).classList.remove('fade-out');
+                    const element = document.getElementById(elements[key]);
+                    element.textContent = character[key];
+                    element.style.opacity = 1;
+                }
+
+                const lineElement = document.getElementById(elements.line);
+                lineElement.style.backgroundColor = character.css.backgroundColor;
+
+                const btextElements = document.getElementsByClassName(elements.btext);
+                for (const btextElement of btextElements) {
+                    btextElement.style.color = character.css.color;
                 }
             }, 500);
         };
