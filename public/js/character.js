@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             synopsis: 'Hitori Gotoh (後ご藤とう ひとり Gotō Hitori), often referred by her bandmates as Bocchi-chan (ぼっちちゃん),[2] is the titular main protagonist of the manga and anime series, Bocchi the Rock!. She is in the first year of Shuka High School and is in charge of the guitar and lyrics of the band, Kessoku Band.',
             images: {
                 
-                character: '../public/assets/image/character-image/gotoh.svg',
+                character: '../public/assets/image/character-image/gotoh.png',
                 smallPhotoOne: '../public/assets/image/characters-small-photos/bocchi-1.png',
                 smallPhotoTwo: '../public/assets/image/characters-small-photos/bocchi-2.png'
             },
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
             synopsis: 'Nijika Ijichi (伊い地じ知ち 虹にじ夏か Ijichi Nijika) is one of the main characters in the manga and anime series, Bocchi the Rock!. She is a second-year student of Shimokitazawa High School and is the drummer in the band, Kessoku Band.',
             images: {
                 
-                character: '../public/assets/image/character-image/nijika.svg',
+                character: '../public/assets/image/character-image/nijika.png',
                 smallPhotoOne: '../public/assets/image/characters-small-photos/nijika-1.png',
                 smallPhotoTwo: '../public/assets/image/characters-small-photos/nijika-2.png'
             },
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
             synopsis: 'Ryo Yamada (山やま田だ リョウ Yamada Ryō) is one of the main characters in the manga and anime series, Bocchi the Rock!. She is in her second year at Shimokitazawa High School and is the bassist of the band, Kessoku Band. She works a part-time job at the live house STARRY with Nijika Ijichi.',
             images: {
                 
-                character: '../public/assets/image/character-image/ryo.svg',
+                character: '../public/assets/image/character-image/ryo.png',
                 smallPhotoOne: '../public/assets/image/characters-small-photos/ryo-1.png',
                 smallPhotoTwo: '../public/assets/image/characters-small-photos/ryo-2.png'
             },
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
             synopsis: 'Ikuyo Kita (喜き多た 郁いく代よ Kita Ikuyo) is one of the main characters in the manga and anime series, Bocchi the Rock!. She is in the first year of Shuka High School and is in charge of the guitar and vocals of the band, Kessoku Band. She has great admiration for Ryo Yamada, after seeing her street concert.', 
             images: {
             
-                character: '../public/assets/image/character-image/kita.svg',
+                character: '../public/assets/image/character-image/kita.png',
                 smallPhotoOne: '../public/assets/image/characters-small-photos/kita-1.png',
                 smallPhotoTwo: '../public/assets/image/characters-small-photos/kita-2.png'
             },
