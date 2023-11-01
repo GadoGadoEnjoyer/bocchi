@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
           eyeColor: document.getElementById('eyeColor'),
           characterImage: document.getElementById('images.character'),
           line: document.getElementById('line'),
-          p: document.getElementsByClassName('p')
+          btext: document.getElementById('btext')
         };
       
         // Add the fade-out class to elements to make them fade out
@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
           setTimeout(() => {
             for (const key in elements) {
               elements[key].textContent = character[key];
+              elements.line.style.backgroundColor = character.css.backgroundColor;
               elements[key].classList.remove('fade-out');
             }
           }, 500); // You can adjust the delay as needed for smoother transitions

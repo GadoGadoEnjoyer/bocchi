@@ -31,17 +31,17 @@
                 <name id="name">Ijichi Nijika</name>
                 <sub id="va">VA:Suzushiro, Sayumi</sub>
                 <div class="desc">
-                    <b>Birthday</b>
+                    <b id="btext">Birthday</b>
                     <p id="birthday">May 29</p>
-                    <b>Gender</b>
+                    <b id="btext">Gender</b>
                     <p id="gender">Female</p>
-                    <b>Height</b>
+                    <b id="btext">Height</b>
                     <p id="height">154cm</p>
-                    <b>Weight</b>
+                    <b id="btext">Weight</b>
                     <p id="weight">48kg</p>
-                    <b>Hair Color</b>
+                    <b id="btext">Hair Color</b>
                     <p id="hairColor">Blonde</p>
-                    <b>Eye Color</b>
+                    <b id="btext">Eye Color</b>
                     <p id="eyeColor">Vermillion</p>
                 </div>
                 <img id="button1" src="<?php echo(BASEURL . "/assets/image/characters-small-photos/bocchi-1.png")?>" alt="">
@@ -50,7 +50,7 @@
                 <img id="button4" src="<?php echo(BASEURL . "/assets/image/characters-small-photos/kita-1.png")?>" alt="">
             </div>
             <div class="charmain">
-                <div class="line"></div>
+                <div class="line" id="line"></div>
                 <img id="images.character" src="<?php echo(BASEURL . "/assets/image/character-image/nijika.png")?>" alt="" class="charimg">
             </div>
         </main>
