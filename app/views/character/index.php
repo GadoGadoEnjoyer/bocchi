@@ -48,6 +48,10 @@
             <div class="charmain">
                 <div class="line"></div>
                 <img src="<?php echo(BASEURL . "/assets/image/character-image/nijika.png")?>" alt="" class="charimg">
+                <button id="button1">Character 1</button>
+                <button id="button2">Character 2</button>
+                <button id="button3">Character 3</button>
+                <button id="button4">Character 4</button>
             </div>
         </main>
     </body>
