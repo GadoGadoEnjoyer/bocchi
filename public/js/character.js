@@ -138,15 +138,12 @@ document.addEventListener("DOMContentLoaded", function() {
             characterImage: 'images.character',
         };
 
-        // Fade out all elements and the line
+        // Fade out all elements
         for (const key in elements) {
             document.getElementById(elements[key]).classList.add('fade-out');
         }
 
-        const lineElement = document.getElementById('line');
-        lineElement.style.transition = 'background-color 0.5s';
-        lineElement.style.backgroundColor = 'transparent';
-
+        // Fade out all btext elements
         const btextElements = document.querySelectorAll('.btext');
         btextElements.forEach(element => {
             element.classList.add('fade-out');
@@ -155,54 +152,45 @@ document.addEventListener("DOMContentLoaded", function() {
         const newCharacterImage = new Image();
         newCharacterImage.src = character.images.character;
 
-        // Create a promise for the image loading
-        const imagePromise = new Promise((resolve) => {
-            newCharacterImage.onload = resolve;
-        });
-
-        // Wait for the image to load and the fade-out to complete
-        Promise.all([imagePromise, waitForTransition(elements)]).then(() => {
-            // Change the image after everything has faded out
-            const characterImageElement = document.getElementById(elements.characterImage);
-            characterImageElement.src = newCharacterImage.src;
-
-            // Use a setTimeout to update the content and start the fade-in animation
+        newCharacterImage.onload = () => {
+            // Use a setTimeout for smoother transition
             setTimeout(() => {
-                for (const key in elements) {
-                    document.getElementById(elements[key]).textContent = character[key];
-                    document.getElementById(elements[key]).classList.remove('fade-out');
-                }
+                const characterImageElement = document.getElementById(elements.characterImage);
+                characterImageElement.classList.add('fade-out');
 
-                // Start the fade-in animation for the btext elements
-                btextElements.forEach(element => {
-                    element.classList.remove('fade-out');
-                });
-
-                // Change the line color with a delay to create a smoother transition
+                // Wait for the fade-out animation to complete
                 setTimeout(() => {
-                    lineElement.style.backgroundColor = character.css.backgroundColor;
-                }, 50);
+                    characterImageElement.src = newCharacterImage.src;
 
-                // Remove the fade-in class from the character image
-                characterImageElement.classList.remove('fade-in');
-            }, 500);
-        });
-    }
+                    // Wait for a short time before fading in
+                    setTimeout(() => {
+                        characterImageElement.classList.remove('fade-out');
+                        characterImageElement.classList.add('fade-in');
 
-    function waitForTransition(elements) {
-        return new Promise((resolve) => {
-            const elementArray = Object.values(elements);
-            const transitionEnd = (event) => {
-                if (event.target === elementArray[elementArray.length - 1]) {
-                    elementArray.forEach(element => {
-                        element.removeEventListener('transitionend', transitionEnd);
-                    });
-                    resolve();
-                }
-            };
-            elementArray.forEach(element => {
-                element.addEventListener('transitionend', transitionEnd);
-            });
-        });
+                        // Use a setTimeout to update the content and remove the fade-out class
+                        setTimeout(() => {
+                            for (const key in elements) {
+                                document.getElementById(elements[key]).textContent = character[key];
+                            }
+
+                            // Change the line color with a transition
+                            const lineElement = document.getElementById('line');
+                            lineElement.style.transition = 'background-color 0.5s';
+                            lineElement.style.backgroundColor = character.css.backgroundColor;
+
+                            // Remove fade-out class from all elements
+                            for (const key in elements) {
+                                document.getElementById(elements[key]).classList.remove('fade-out');
+                            }
+
+                            // Remove fade-out class from all btext elements
+                            btextElements.forEach(element => {
+                                element.classList.remove('fade-out');
+                            }
+                        }, 500); // Delay as needed for smoother transitions
+                    }, 100); // Delay for image switch
+                }, 100); // Delay after initial fade-out
+            }, 100); // Delay before starting the fade-out
+        };
     }
 });
