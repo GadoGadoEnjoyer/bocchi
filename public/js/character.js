@@ -145,7 +145,9 @@ document.addEventListener("DOMContentLoaded", function() {
           weight: document.getElementById('weight'),
           hairColor: document.getElementById('hairColor'),
           eyeColor: document.getElementById('eyeColor'),
-          characterImage: document.getElementById('images.character')
+          characterImage: document.getElementById('images.character'),
+          line: document.getElementById('line'),
+          p: document.getElementsByClassName('p')
         };
       
         // Add the fade-out class to elements to make them fade out
@@ -167,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
               elements[key].textContent = character[key];
               elements[key].classList.remove('fade-out');
             }
-          }, 100); // You can adjust the delay as needed for smoother transitions
+          }, 500); // You can adjust the delay as needed for smoother transitions
         };
       }
     });      
