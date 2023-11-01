@@ -136,17 +136,18 @@ document.addEventListener("DOMContentLoaded", function() {
             hairColor: 'hairColor',
             eyeColor: 'eyeColor',
             characterImage: 'images.character',
-            line: 'line',
         };
 
-        // Fade out elements
+        // Fade out all elements
         for (const key in elements) {
-            const element = document.getElementById(elements[key]);
-            element.classList.add('fade-out');
-            if (key === 'line') {
-                element.style.backgroundColor = character.css.backgroundColor;
-            }
+            document.getElementById(elements[key]).classList.add('fade-out');
         }
+
+        // Fade out all btext elements
+        const btextElements = document.querySelectorAll('.btext');
+        btextElements.forEach(element => {
+            element.classList.add('fade-out');
+        });
 
         const newCharacterImage = new Image();
         newCharacterImage.src = character.images.character;
@@ -155,14 +156,27 @@ document.addEventListener("DOMContentLoaded", function() {
             characterImageElement.src = newCharacterImage.src;
             characterImageElement.classList.add('fade-in');
 
+            // Use a setTimeout to update the content and remove the fade-out class
             setTimeout(() => {
-                // Update content and remove fade-out class
                 for (const key in elements) {
-                    const element = document.getElementById(elements[key]);
-                    element.textContent = character[key];
-                    element.classList.remove('fade-out');
+                    document.getElementById(elements[key]).textContent = character[key];
                 }
-            }, 500); // Adjust the delay as needed for smoother transitions
+
+                // Change the line color with transition
+                const lineElement = document.getElementById('line');
+                lineElement.style.transition = 'background-color 0.5s';
+                lineElement.style.backgroundColor = character.css.backgroundColor;
+
+                // Remove fade-out class from all elements
+                for (const key in elements) {
+                    document.getElementById(elements[key]).classList.remove('fade-out');
+                }
+
+                // Remove fade-out class from all btext elements
+                btextElements.forEach(element => {
+                    element.classList.remove('fade-out');
+                });
+            }, 500);
         };
     }
 });
