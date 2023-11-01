@@ -139,11 +139,11 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('name').textContent = character.name;
         document.getElementById('va').textContent = character.va;
         document.getElementById('birthday').textContent = character.birthday;
-        document.getElementById('gender') = character.gender;
-        document.getElementById('height') = character.height;
-        document.getElementById('weight') = character.weight;
-        document.getElementById('hairColor') = character.hairColor;
-        document.getElementById('eyeColor') = character.eyeColor;
-        document.getElementById('images.character') = character.images.character;
+        document.getElementById('gender').textContent = character.gender;
+        document.getElementById('height').textContent = character.height;
+        document.getElementById('weight').textContent = character.weight;
+        document.getElementById('hairColor').textContent = character.hairColor;
+        document.getElementById('eyeColor').textContent = character.eyeColor;
+        document.getElementById('images.character').src = character.images.character;
     }
 });
