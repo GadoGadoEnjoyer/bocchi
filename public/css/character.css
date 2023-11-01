@@ -111,4 +111,6 @@ sub{
     transform : rotate(60deg);
     display:inline-block;
     z-index:2;
+    margin-left: 2vw;
+    margin-bottom: 2vw;
 }
