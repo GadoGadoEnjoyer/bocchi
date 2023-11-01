@@ -28,26 +28,26 @@
                     <a>Band Photos</a>
                     <a>Arts</a>
                 </div>
-                <name>Ijichi Nijika</name>
-                <sub>VA:Suzushiro, Sayumi</sub>
+                <name id="name">Ijichi Nijika</name>
+                <sub id="va">VA:Suzushiro, Sayumi</sub>
                 <div class="desc">
                     <b>Birthday</b>
-                    <p>May 29</p>
+                    <p id="birthday">May 29</p>
                     <b>Gender</b>
-                    <p>Female</p>
+                    <p id="gender">Female</p>
                     <b>Height</b>
-                    <p>154cm</p>
+                    <p id="height">154cm</p>
                     <b>Weight</b>
-                    <p>48kg</p>
+                    <p id="weight">48kg</p>
                     <b>Hair Color</b>
-                    <p>Blonde</p>
+                    <p id="hairColor">Blonde</p>
                     <b>Eye Color</b>
-                    <p>Vermillion</p>
+                    <p id="eyeColor">Vermillion</p>
                 </div>
             </div>
             <div class="charmain">
                 <div class="line"></div>
-                <img src="<?php echo(BASEURL . "/assets/image/character-image/nijika.png")?>" alt="" class="charimg">
+                <img id="images.character" src="<?php echo(BASEURL . "/assets/image/character-image/nijika.png")?>" alt="" class="charimg">
                 <button id="button1">Character 1</button>
                 <button id="button2">Character 2</button>
                 <button id="button3">Character 3</button>

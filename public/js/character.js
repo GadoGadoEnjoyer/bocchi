@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     const charactersData = {
         'Gotoh Hitori': {
             name: 'Gotoh Hitori',
@@ -116,4 +117,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         // Add data for other characters here
     };
+
+    document.getElementById('button1').addEventListener('click', () => {
+        updateCharacterInfo('Gotoh Hitori');
+    });
+    
+    document.getElementById('button2').addEventListener('click', () => {
+        updateCharacterInfo('Nijika');
+    });
+
+    document.getElementById('button3').addEventListener('click', () => {
+        updateCharacterInfo('Ryo');
+    });
+
+    document.getElementById('button4').addEventListener('click', () => {
+        updateCharacterInfo('Kita');
+    });
+
+    function updateCharacterInfo(characterName) {
+        const character = charactersData[characterName];
+        document.getElementById('name').textContent = character.name;
+        document.getElementById('va').textContent = character.va;
+        document.getElementById('birthday').textContent = character.birthday;
+        document.getElementById('gender').src = character.gender;
+        document.getElementById('height') = character.height;
+        document.getElementById('weight') = character.weight;
+        document.getElementById('hairColor') = character.hairColor;
+        document.getElementById('eyeColor') = character.eyeColor;
+        document.getElementById('simages.character') = character.images.character;
+    }
 });
