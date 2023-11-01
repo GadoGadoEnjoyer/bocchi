@@ -116,3 +116,13 @@ sub{
     margin-top: -13vw;
     position: absolute;
 }
+.chardesc > img{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+}
+#images.character{
+    position: absolute;
+    right:1vw;
+    
+}
