@@ -118,59 +118,46 @@ document.addEventListener("DOMContentLoaded", function() {
         // Add data for other characters here
     };
 
-    document.getElementById('button1').addEventListener('click', () => {
-        updateCharacterInfo('Gotoh Hitori');
-    });
-    
-    document.getElementById('button2').addEventListener('click', () => {
-        updateCharacterInfo('Nijika');
-    });
-
-    document.getElementById('button3').addEventListener('click', () => {
-        updateCharacterInfo('Ryo');
-    });
-
-    document.getElementById('button4').addEventListener('click', () => {
-        updateCharacterInfo('Kita');
+    const buttons = ['Gotoh Hitori', 'Nijika', 'Ryo', 'Kita'];
+    buttons.forEach((characterName, index) => {
+        const button = document.getElementById(`button${index + 1}`);
+        button.addEventListener('click', () => updateCharacterInfo(characterName));
     });
 
     function updateCharacterInfo(characterName) {
         const character = charactersData[characterName];
         const elements = {
-          name: document.getElementById('name'),
-          va: document.getElementById('va'),
-          birthday: document.getElementById('birthday'),
-          gender: document.getElementById('gender'),
-          height: document.getElementById('height'),
-          weight: document.getElementById('weight'),
-          hairColor: document.getElementById('hairColor'),
-          eyeColor: document.getElementById('eyeColor'),
-          characterImage: document.getElementById('images.character'),
-          line: document.getElementById('line'),
-          btext: document.getElementById('btext')
+            name: 'name',
+            va: 'va',
+            birthday: 'birthday',
+            gender: 'gender',
+            height: 'height',
+            weight: 'weight',
+            hairColor: 'hairColor',
+            eyeColor: 'eyeColor',
+            characterImage: 'images.character',
+            line: 'line',
+            btext: 'btext'
         };
-      
-        // Add the fade-out class to elements to make them fade out
+
         for (const key in elements) {
-          elements[key].classList.add('fade-out');
+            document.getElementById(elements[key]).classList.add('fade-out');
         }
-      
-        // Create a new Image element for preloading the character image
+
         const newCharacterImage = new Image();
         newCharacterImage.src = character.images.character;
         newCharacterImage.onload = () => {
-          // Once the image is fully loaded, update the image and apply the fade-in class
-          elements.characterImage.src = newCharacterImage.src;
-          elements.characterImage.classList.add('fade-in');
-      
-          // Use a setTimeout to update the content and remove the fade-out class
-          setTimeout(() => {
-            for (const key in elements) {
-              elements[key].textContent = character[key];
-              elements.line.style.backgroundColor = character.css.backgroundColor;
-              elements[key].classList.remove('fade-out');
-            }
-          }, 500); // You can adjust the delay as needed for smoother transitions
+            const characterImageElement = document.getElementById(elements.characterImage);
+            characterImageElement.src = newCharacterImage.src;
+            characterImageElement.classList.add('fade-in');
+
+            setTimeout(() => {
+                for (const key in elements) {
+                    document.getElementById(elements[key]).textContent = character[key];
+                    document.getElementById(elements.line).style.backgroundColor = character.css.backgroundColor;
+                    document.getElementById(elements[key]).classList.remove('fade-out');
+                }
+            }, 500);
         };
-      }
-    });      
+    }
+});
