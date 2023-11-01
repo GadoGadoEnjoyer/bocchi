@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             // Remove fade-out class from all btext elements
                             btextElements.forEach(element => {
                                 element.classList.remove('fade-out');
-                            }
+                            });
                         }, 500); // Delay as needed for smoother transitions
                     }, 100); // Delay for image switch
                 }, 100); // Delay after initial fade-out
