@@ -73,7 +73,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color:#040f16;
+    background-color:#040f16;
     margin-left:2vw;
 }
 .charnav > a {
