@@ -54,8 +54,8 @@ class UserModel{
     public function sendmail($destination, $token){
         $mg = Mailgun::create(API_MAIL); //sukaair.online api?
 
-        $mg->messages()->send('mail.sukaair.online', [
-        'from'    => 'LoafAnon@mail.sukaair.online',
+        $mg->messages()->send('mail.bocchi.uno', [
+        'from'    => 'LoafAnon@mail.bocchi.uno',
         'to'      => $destination,
         'subject' => 'Email Verification!',
         'text'    => BASEURL . '/verifikasi/' . $token . '   Click this link to verify your email!'
