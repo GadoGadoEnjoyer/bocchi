@@ -1,3 +1,7 @@
 <?php
 
-header("Location: https://www.sukaair.online/bocchi/public");
+require_once 'app/init.php';
+
+$app = new App;
+
+?>
